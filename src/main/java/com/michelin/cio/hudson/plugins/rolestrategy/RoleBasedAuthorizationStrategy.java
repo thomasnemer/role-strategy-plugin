@@ -925,4 +925,10 @@ public class RoleBasedAuthorizationStrategy extends AuthorizationStrategy {
         }
     }
   }
+
+  @Nonnull
+  public RoleStrategySecurityConfig getSecurityConfiguration(){
+      final RoleStrategySecurityConfig config = RoleStrategySecurityConfig.getInstance();
+      return config != null ? config : RoleStrategySecurityConfig.getDefault();
+  }
 }
